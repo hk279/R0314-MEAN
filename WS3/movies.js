@@ -14,6 +14,8 @@ const promise = axios
   })
   console.log(promise)
 
+const PORT = process.env.PORT || 5000
+
 http.createServer((request, response)=>{
   response.writeHead(200, {"Content-Type": "text/html"})
   response.write(
@@ -42,6 +44,6 @@ http.createServer((request, response)=>{
     </html>`
   )
   response.end()
-}).listen(8081)
+}).listen(PORT)
 
-console.log("Server running at http://127.0.0.1:8081")
+console.log("Server running at http://127.0.0.1:5000")
