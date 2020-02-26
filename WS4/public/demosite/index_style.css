@@ -1,0 +1,82 @@
+body {
+	background-color: #fffaea;
+}
+p {
+	display: inline;
+}
+#intro {
+	background-color: #7a1693;
+	color: #fffaea;
+	padding: 20px;
+	text-align: center;
+	border: 2px solid black;
+}
+header {
+	text-align: center;
+	padding: 30px;
+	background: linear-gradient(to bottom, #fffaea 0%, #f4e29f 100%);
+}
+h2 {
+	display: inline;
+}
+#notebook {
+	max-height: 100px;
+	display: inline;
+}
+#content {
+	text-align: center;
+	background-color: #f4e29f;
+	padding: 2%;
+}
+#dropdown {
+	display: inline;
+	margin-right: 10px;
+}
+#prio {
+	display: inline;
+	margin-left: 10px;
+}
+input[type=text] {
+	width: 100%;
+}
+input[type=submit] {
+	display: block;
+	margin: auto;
+}
+textarea {
+	width: 100%
+}
+#entry-div {
+	display: inline-block;
+	padding: 2%;
+	margin: 2%;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: #fffaea;
+}
+#view-div {
+	padding: 2%;
+	margin: auto;
+	margin-top: 2%;
+	max-width: 80%;
+	background-color: #fffaea;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+table {
+	margin: auto;
+	padding: 10px;
+}
+th {
+	margin: 10px;
+	padding: 10px;
+}
+td {
+	height: auto;
+	margin: 10px;
+	padding: 10px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	max-width: 30%;
+}
+	

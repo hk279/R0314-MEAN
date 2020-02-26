@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>To do -list</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="index_style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<script src="index_script.js"></script>
+	</head>
+	<body onload="showList()">
+		<header>
+			<h2>To do -list</h2>
+			<img id="notebook" src="notebook.png" alt="notebook">
+		</header>
+		<div id="intro">
+			<h4>Save your tasks and events here!</h4>
+		</div>
+		<div id="content">
+			<div id="entry-div">
+				<form id="entry-form" onsubmit="save(); showList(); return resetForm()">
+					<fieldset>
+						<legend>Enter an item to the list</legend>
+						<p>Title:</p>
+						<input type="text" name="Title" id="title" maxlength="30">
+						<br><br>
+						<div id="dropdown">
+							<p>Entry type:</p>
+							<select id="entry-type">
+								<option value="Task">Task</option>
+								<option value="Event">Event</option>
+							</select>
+						</div>
+						<br><br><p>Description:</p>
+						<textarea name="Description" id="desc" maxlength="140"></textarea>
+						<br><br>
+						<p>Due Date:</p><br>
+						<input type="date" name="duedate" id="duedate"><br><br>
+						<input type="submit" name="Save" value="Save">
+					</fieldset>
+				</form>
+			</div>
+			<div id="view-div">
+				<table id="view-table">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Type</th>
+							<th>Description</th>
+							<th>Due date</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody id="table-body">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
