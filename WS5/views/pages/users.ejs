@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("../partials/head") %>
+</head>
+
+<body class="container">
+
+    <%- include ("../partials/header") %>
+    <main>
+        <div class="jumbotron">
+            <table>
+                <% users.forEach(element => { %>
+                <% if(element.name != "John" && element.age < 50) { %>
+                <tr>
+                    <td><%= element.name %> </td>
+                    <td><%= element.age %></td>
+                </tr>
+                <% } %>
+                <% }) %>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <%- include ("../partials/footer") %>
+</body>
+
+</html>
