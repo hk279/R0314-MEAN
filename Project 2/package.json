@@ -1,0 +1,16 @@
+{
+    "name": "guestbook",
+    "description": "A Guestbook App",
+    "version": "1.0.0",
+    "engines": {
+        "node": "10.15.1"
+    },
+    "main": "guestbook.js",
+    "scripts": {
+        "start": "node guestbook.js"
+    },
+    "dependencies": {
+        "ejs": "^3.0.1",
+        "express": "^4.17.1"
+    }
+}

@@ -1,6 +1,7 @@
 var express = require("express");
-var fs = require("fs");
 var app = express();
+
+const PORT = process.env.PORT || 5000;
 
 app.set("view engine", "ejs");
 
@@ -92,6 +93,6 @@ app.get("*", function(req, res) {
     res.send("Can't find the requested page", 404);
 });
 
-app.listen(8081, function() {
-    console.log("App listening on port 8081");
+app.listen(PORT, function() {
+    console.log("App listening on port 5000");
 });

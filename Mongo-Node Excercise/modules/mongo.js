@@ -1,4 +1,7 @@
 var mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const userSchema = mongoose.Schema(
     {
@@ -48,8 +51,7 @@ const movieSchema = mongoose.Schema(
 exports.saveUser = function saveUser(regUsername, regPassword) {
     const User = mongoose.model("User", userSchema);
 
-    const uri =
-        "mongodb+srv://admin:fullstack279@cluster0-ekgoh.mongodb.net/test?retryWrites=true&w=majority";
+    const uri = process.env.URI;
     mongoose.connect(uri, { dbName: "users" });
 
     var db = mongoose.connection;
@@ -79,8 +81,7 @@ exports.saveUser = function saveUser(regUsername, regPassword) {
 exports.getUser = async function getUser(loginUsername, loginPassword) {
     const User = mongoose.model("User", userSchema);
 
-    const uri =
-        "mongodb+srv://admin:fullstack279@cluster0-ekgoh.mongodb.net/test?retryWrites=true&w=majority";
+    const uri = process.env.URI;
     mongoose.connect(uri, { dbName: "users" });
 
     var db = mongoose.connection;
@@ -116,8 +117,7 @@ exports.getUser = async function getUser(loginUsername, loginPassword) {
 exports.getMovies = async function getMovies(keyword) {
     const Movie = mongoose.model("Movie", movieSchema);
 
-    const uri =
-        "mongodb+srv://admin:fullstack279@cluster0-ekgoh.mongodb.net/test?retryWrites=true&w=majority";
+    const uri = process.env.URI;
 
     mongoose.connect(uri, { dbName: "sample_mflix" });
 

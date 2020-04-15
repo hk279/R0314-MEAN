@@ -34,7 +34,7 @@ app.get("/guestbook", function(req, res) {
             "</tr>";
     });
     res.sendFile(__dirname + "/guestbook.html");
-    res.send(results);
+    /* res.send(results); */
 });
 app.get("/newmessage", function(req, res) {
     res.sendFile(__dirname + "/newmessage.html");
@@ -49,7 +49,7 @@ app.post("/newmessage", function(req, res) {
         message: req.body.message
     });
 
-    var jsonStr = JSON.stringify(data);
+    var jsonStr = JSON.stringify(data, null, 4);
 
     fs.writeFile("data.json", jsonStr, function(err) {
         if (err) throw err;
@@ -71,14 +71,38 @@ app.post("/ajaxmessage", function(req, res) {
         message: req.body.message
     });
 
-    var jsonStr = JSON.stringify(data);
+    var jsonStr = JSON.stringify(data, null, 4);
+
+    var table = `
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Username</td>
+                <td>Country</td>
+                <td>Message</td>
+            </tr>
+        </thead>
+    <tbody>
+    `;
+    data.forEach(element => {
+        table += `
+        <tr>
+            <td>${element.username}</td>
+            <td>${element.country}</td>
+            <td>${element.message}</td>
+        </tr>`;
+    });
+    table += `
+        </tbody>
+    </table>
+    `;
 
     fs.writeFile("data.json", jsonStr, function(err) {
         if (err) throw err;
         console.log("It's saved!");
     });
 
-    res.send("Entry is saved. Browse to the /guestbook to see all entries.");
+    res.send(table);
 });
 
 //404 route
@@ -87,5 +111,5 @@ app.get("*", function(req, res) {
 });
 
 app.listen(8081, function() {
-    console.log("Example app listening on port 8081");
+    console.log("App listening on port 8081");
 });
